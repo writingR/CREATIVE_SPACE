@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script_checkbox_02.html</title>
+    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+    <style>
+       input[type="checkbox"] {
+            position: absolute;
+            left: -2000%;
+        }
+        input[type="checkbox"]+label {
+            position: relative;
+        }
+        input[type="checkbox"]+label::before {
+            content: "";
+            display: inline-block;
+            margin: 0 4px 0 0;
+            width: 60px;
+            height: 60px;
+            border: 3px solid black;
+            position: relative;
+            top: 4px;
+            border-radius: 15px;
+            transition: all 0.5s 0.3s;
+            opacity: 0.8
+        }
+        input[type="checkbox"]:checked+label::before {
+            border: 3px solid black;
+            background: white;
+        }
+        input[type="checkbox"]:checked+label::after {
+            content: "";
+            position: absolute;
+            left: 9px;
+            top: -39px;
+            background: url(../Script_2/image/checked.png) no-repeat center;
+            width: 50px;
+            height: 60px;
+            transition: all 3s 0.6;
+            background-size: 0px auto;
+        }
+
+        input[type="checkbox"]:checked+label::after {
+            background-size: 40px auto;
+        }
+        </style>
+        <script>
+              function allSelect(checkFlag) {
+            var boxch = document.cafe;
+            for (var i = 0; i < boxch.elements.length; i++) {
+                if (boxch.elements[i].name == 'iLike') {
+                    boxch.elements[i].checked = checkFlag;
+                }
+            }
+        }
+
+        </script>
+</head>
+<body>
+    <form id="action_ch" style="margin-left: 35%; margin-top: 17%; " name="cafe">
+    
+    <div>
+    <input type="checkbox" id="check_box" name="iLike">
+    <label for="check_box"></label>
+    <span style="vertical-align: 14px;font-size: 30px;margin-left: 10px;">Do you like Americano?</span>
+    </div>
+    
+    <div style="margin-top: 30px;">
+    <input type="checkbox" id="check_box1" name="iLike">
+    <label for="check_box1"></label>
+    <span style="vertical-align: 14px;font-size: 30px;margin-left: 10px;">Do you like Cappuccino?</span>
+    </div>
+    
+    <div style="margin-top: 30px;">
+    <input type="checkbox" id="check_box2" name="iLike">
+    <label for="check_box2"></label>
+    <span style="vertical-align: 14px;font-size: 30px;margin-left: 10px;">Do you like Chocolate?</span>
+    </div>
+    
+    <div style="margin-top: 30px;">
+    <input type="checkbox" id="check_box3" name="iLike" onclick="allSelect(checked)">
+    <label for="check_box3"></label>
+    <span style="vertical-align: 14px;font-size: 30px;margin-left: 10px;">I Like All menu :-p </span>
+    </div>
+    
+    </form>
+</body>
+</html>

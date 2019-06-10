@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Script_select_03</title>
+</head>
+<script>
+    window.onload = function() {
+        var fMonth = 1;
+        var lMonth = 13;
+        var fDay = 1;
+        var lDay = 32;
+
+        var resultMonth = "";
+        var resultDay = "";
+
+        for (var i = fMonth; i < lMonth; i++) {
+            resultMonth += "<option value =" + i + ">" + i + "</option>";
+        }
+        for (var i = fDay; i < lDay; i++) {
+            resultDay += "<option value =" + i + ">" + i + "</option>";
+        }
+
+        document.getElementById("month").innerHTML = resultMonth
+        document.getElementById("day").innerHTML = resultDay
+    }
+</script>
+
+<body>
+    <form class="select_form">
+        <table style="margin: 0 auto; margin-top: 300px;">
+            <div>
+                <tr>
+                    <td><input type="text" style="width:150px;padding: 10px;text-align: right;opacity: 0.8;border-radius: 10px;border:1px solid gray;" value="년도를 입력해주세요"></td>
+                    <td><select style="width: 140px;padding: 10px;border-radius: 10px;border:1px solid gray;" name="month" id="month"></select></td>
+                    <td><select style="width: 140px;padding: 10px;border-radius: 10px;border:1px solid gray;" name="day" id="day"></select></td>
+                </tr>
+            </div>
+        </table>
+    </form>
+</body></html>
