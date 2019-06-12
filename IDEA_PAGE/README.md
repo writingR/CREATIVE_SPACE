@@ -1,6 +1,5 @@
 ***IDEA_PAGE***
-
-============ 
+============  
 HTML + CSS + hover.
 - 
 ### IDEA_PAGE architecture
